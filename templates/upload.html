@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=	, initial-scale=1.0">
+    <title>RQM Parse</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container text-center my-5">
+        <h1>Upload new File</h1>
+        <form action="" method=post enctype=multipart/form-data> 
+        	<p>
+        		<input type=file name=file>
+            	<input type=submit value=Upload>
+            </p>
+        </form>
+        {% if data is defined %}
+        	<p>Total calls: {{ data.total_calls }}</p>
+        	<p>Success calls: {{ data.success_calls }} ({{ (data.success_calls / data.total_calls * 100) | round(1) }} %)</p>
+        	<p>Not success calls: {{ data.not_success_calls }} ({{ (data.not_success_calls / data.total_calls * 100) | round(1) }} %)</p>
+        {% endif %}
+</body>
+
+</html>
